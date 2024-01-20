@@ -18,5 +18,6 @@
     <string name="third_quadrant_content">A layout composable that places its children in a horizontal sequence.</string>
     <string name="fourth_quadrant_title">Text composable</string>
     <string name="fourth_quadrant_content">Displays text and follows the recommended Material Design guidelines.</string>
+    <string name="title_activity_business_card">BusinessCardActivity</string>
 
 </resources>

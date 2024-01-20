@@ -11,4 +11,7 @@
     <color name="color2">#FFD0BCFF</color>
     <color name="color3">#FFB69DF8</color>
     <color name="color4">#FFF6EDFF</color>
+    <color name="business_card_background">#D2E8D4</color>
+    <color name="business_card_position">#FF3ddc84</color>
+    <color name="business_card_profile_image_background">#0E3142</color>
 </resources>
