@@ -11,4 +11,7 @@
     <color name="second_color">#FFD0BCFF</color>
     <color name="third_color">#FFB69DF8</color>
     <color name="fourth_color">#FFF6EDFF</color>
+    <color name="logo_background">#072d44</color>
+    <color name="business_card_background">#c7ddb5</color>
+    <color name="business_card_color">#005c29</color>
 </resources>

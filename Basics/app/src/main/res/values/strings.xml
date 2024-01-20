@@ -19,4 +19,10 @@
     <string name="third_content">A layout composable that places its children in a horizontal sequence.</string>
     <string name="fourth_title">Column composable</string>
     <string name="fourth_content">A layout composable that places its children in a vertical sequence.</string>
+    <string name="title_activity_business_card">BusinessCardActivity</string>
+    <string name="business_card_name">Sehyeon Choi</string>
+    <string name="business_card_job">Android Developer Extraordinaire</string>
+    <string name="business_card_phone_number">+82 (010) 0000 0000</string>
+    <string name="business_card_insta">\@AndroidDev</string>
+    <string name="business_card_email">chltpgus6275@gmail.com</string>
 </resources>
