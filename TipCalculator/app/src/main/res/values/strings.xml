@@ -20,4 +20,11 @@
     <string name="calculate_tip">Calculate Tip</string>
     <string name="bill_amount">Bill Amount</string>
     <string name="tip_amount">Tip Amount: %s</string>
+    <string name="title_activity_art_space">ArtSpaceActivity</string>
+    <string name="first_artwork_title">Yachting</string>
+    <string name="first_artwork_artist">Henry Chase (American, 1853–1889)</string>
+    <string name="second_artwork_title">Design for the North Wing of the Library and Chapel Building at the University of Michigan, Ann Arbor (1838–39)</string>
+    <string name="second_artwork_artist">Alexander Jackson Davis (American, 1803–1892)</string>
+    <string name="third_artwork_title">Corso Sant’Anastasia, Verona (1828)</string>
+    <string name="third_artwork_artist">Richard Parkes Bonington (English, 1802–1828)</string>
 </resources>
