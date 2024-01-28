@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!--
+<?xml version="1.0" encoding="utf-8"?><!--
   ~ Copyright (C) 2023 The Android Open Source Project
   ~
   ~ Licensed under the Apache License, Version 2.0 (the "License");
@@ -21,4 +20,13 @@
     <string name="how_was_the_service">Tip Percentage</string>
     <string name="round_up_tip">Round up tip?</string>
     <string name="tip_amount">Tip Amount: %s</string>
+    <string name="title_activity_art_space">ArtSpaceActivity</string>
+    <string name="image1_title">Head of an Italian Woman</string>
+    <string name="image1_painter">Jean-Léon Gérôme (French, 1824-1904)</string>
+    <string name="image2_title">Mona Lisa</string>
+    <string name="image2_painter">Leonardo da Vinci (Italian, 1452-1519)</string>
+    <string name="image3_title">Self-Portrait</string>
+    <string name="image3_painter">Vincent van Gogh (Dutch, 1853-1890)</string>
+    <string name="previous">Previous</string>
+    <string name="next">Next</string>
 </resources>
