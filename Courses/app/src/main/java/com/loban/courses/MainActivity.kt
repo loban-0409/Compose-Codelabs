@@ -51,7 +51,6 @@ class MainActivity : ComponentActivity() {
 @Composable
 fun TopicApp() {
     Topics(topics = DataSource.topics, modifier = Modifier.padding(8.dp))
-
 }
 
 @Composable
