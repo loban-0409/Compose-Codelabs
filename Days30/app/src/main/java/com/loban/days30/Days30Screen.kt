@@ -11,6 +11,7 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
+import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Card
 import androidx.compose.material3.CenterAlignedTopAppBar
 import androidx.compose.material3.ExperimentalMaterial3Api
@@ -24,6 +25,7 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.RectangleShape
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
@@ -82,7 +84,7 @@ fun DayCharacterItem(character: Character, modifier: Modifier = Modifier) {
     var expanded by remember {
         mutableStateOf(false)
     }
-    Card(modifier = modifier, shape = RectangleShape) {
+    Card(modifier = modifier) {
         Column {
             Column(
                 modifier = Modifier
@@ -116,7 +118,7 @@ fun DayCount(day: Int, modifier: Modifier = Modifier) {
 fun DayCharacterName(@StringRes name: Int, modifier: Modifier = Modifier) {
     Text(
         stringResource(id = name),
-        style = MaterialTheme.typography.displaySmall,
+        style = MaterialTheme.typography.displayMedium,
         modifier = modifier
     )
 }
@@ -133,6 +135,7 @@ fun DayCharacterImageButton(
         contentDescription = null,
         modifier = Modifier
             .fillMaxWidth()
+            .clip(shape = RoundedCornerShape(5.dp))
             .clickable { onClick() },
         contentScale = ContentScale.Crop,
     )
