@@ -1,3 +1,25 @@
 <resources>
     <string name="app_name">Days30</string>
+    <string name="app_title">30 Days Of Artwork</string>
+    <string name="day1_image_description">Udsigt over marokkansk landskab, i forgrunden pinjer</string>
+    <string name="day1_detail">Gerda Wegener (Danish, 1886 – 1940)</string>
+    <string name="day2_image_description">Le champ de coquelicot</string>
+    <string name="day2_detail">Hippolyte Camille Delpy (French, 1842 – 1910)</string>
+    <string name="day3_image_description">Sortie Du Troupeau Du Rue Chailly</string>
+    <string name="day3_detail">Léon Augustin Lhermitte (French, 1844 – 1925)</string>
+    <string name="day4_image_description">Winter Morning in the Riviera, at the Well</string>
+    <string name="day4_detail">Adrian Scott Stokes</string>
+    <string name="day5_image_description">Coteau vert, Montplaisant</string>
+    <string name="day5_detail">Albert Marquet</string>
+    <string name="day6_image_description">Zrnovnica</string>
+    <string name="day6_detail">Menci Clement Crnčić (Croatian, 1865–1930)</string>
+    <string name="day7_image_description">Wachau, Scene of Weissenkirchen on the Danube</string>
+    <string name="day7_detail">Paul Unbereit (German, 1884 – 1937)</string>
+    <string name="day8_image_description">Kallmünz – Nature study on the yellow stagecoach</string>
+    <string name="day8_detail">Wassily Kandinsky (Russian, 1866 – 1944)</string>
+    <string name="day9_image_description">Le Passeur</string>
+    <string name="day9_detail">Albert Lebourg (French, 1849–1928)</string>
+    <string name="day10_image_description">A View of the Watzmann Mountain</string>
+    <string name="day10_detail">Adalbert Waagen (German, 1833 – 1898)</string>
+
 </resources>
