@@ -1,3 +1,14 @@
 <resources>
     <string name="app_name">Days30</string>
+    <string name="day_count">Day %d</string>
+    <string name="day1_character_name">요네</string>
+    <string name="day1_character_dialog">그들의 눈에는 내 가면만 보이지. 내 눈에는 그들의 공포만 보이더군.</string>
+    <string name="day2_character_name">아트룩스</string>
+    <string name="day2_character_dialog">한 조각 희망조차 남김없이 파괴한다...</string>
+    <string name="day3_character_name">우디르</string>
+    <string name="day3_character_dialog">적들이 승리에 굶주렸나 보군. 배고픔을 안겨 주자고.</string>
+    <string name="day4_character_name">크산테</string>
+    <string name="day4_character_dialog">자만심보다 끔찍한 괴물은 없다.</string>
+    <string name="day5_character_name">제이스</string>
+    <string name="day5_character_dialog">나는 더 나은 미래를 위해 싸운다.</string>
 </resources>
