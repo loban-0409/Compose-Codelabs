@@ -13,18 +13,10 @@ import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.flow.update
 
 class GameViewModel : ViewModel() {
-    val currentScrambledWord: String = ""
-
     private val _uiState = MutableStateFlow(GameUiState())
     val uiState: StateFlow<GameUiState> = _uiState.asStateFlow()
-
-    private var _count = 0
-    val count
-        get() = _count
-
     private lateinit var currentWord: String
     private var usedWords: MutableSet<String> = mutableSetOf()
-
     var userGuess by mutableStateOf("")
         private set
 
