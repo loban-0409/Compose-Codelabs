@@ -52,13 +52,15 @@ fun SelectOptionScreen(
     subtotal: String,
     options: List<String>,
     onSelectionChanged: (String) -> Unit = {},
-    modifier: Modifier = Modifier
+    onCancelButtonClicked: () -> Unit = {},
+    onNextButtonClicked: () -> Unit = {},
+    modifier: Modifier = Modifier,
 ) {
     var selectedValue by rememberSaveable { mutableStateOf("") }
 
     Column(
         modifier = modifier,
-        verticalArrangement = Arrangement.SpaceBetween
+        verticalArrangement = Arrangement.SpaceBetween,
     ) {
         Column(modifier = Modifier.padding(dimensionResource(R.dimen.padding_medium))) {
             options.forEach { item ->
@@ -68,23 +70,23 @@ fun SelectOptionScreen(
                         onClick = {
                             selectedValue = item
                             onSelectionChanged(item)
-                        }
+                        },
                     ),
-                    verticalAlignment = Alignment.CenterVertically
+                    verticalAlignment = Alignment.CenterVertically,
                 ) {
                     RadioButton(
                         selected = selectedValue == item,
                         onClick = {
                             selectedValue = item
                             onSelectionChanged(item)
-                        }
+                        },
                     )
                     Text(item)
                 }
             }
             Divider(
                 thickness = dimensionResource(R.dimen.thickness_divider),
-                modifier = Modifier.padding(bottom = dimensionResource(R.dimen.padding_medium))
+                modifier = Modifier.padding(bottom = dimensionResource(R.dimen.padding_medium)),
             )
             FormattedPriceLabel(
                 subtotal = subtotal,
@@ -92,8 +94,8 @@ fun SelectOptionScreen(
                     .align(Alignment.End)
                     .padding(
                         top = dimensionResource(R.dimen.padding_medium),
-                        bottom = dimensionResource(R.dimen.padding_medium)
-                    )
+                        bottom = dimensionResource(R.dimen.padding_medium),
+                    ),
             )
         }
         Row(
@@ -101,11 +103,11 @@ fun SelectOptionScreen(
                 .fillMaxWidth()
                 .padding(dimensionResource(R.dimen.padding_medium)),
             horizontalArrangement = Arrangement.spacedBy(dimensionResource(R.dimen.padding_medium)),
-            verticalAlignment = Alignment.Bottom
+            verticalAlignment = Alignment.Bottom,
         ) {
             OutlinedButton(
                 modifier = Modifier.weight(1f),
-                onClick = {}
+                onClick = onCancelButtonClicked,
             ) {
                 Text(stringResource(R.string.cancel))
             }
@@ -113,7 +115,7 @@ fun SelectOptionScreen(
                 modifier = Modifier.weight(1f),
                 // the button is enabled when the user makes a selection
                 enabled = selectedValue.isNotEmpty(),
-                onClick = {}
+                onClick = onNextButtonClicked,
             ) {
                 Text(stringResource(R.string.next))
             }
@@ -128,7 +130,7 @@ fun SelectOptionPreview() {
         SelectOptionScreen(
             subtotal = "299.99",
             options = listOf("Option 1", "Option 2", "Option 3", "Option 4"),
-            modifier = Modifier.fillMaxHeight()
+            modifier = Modifier.fillMaxHeight(),
         )
     }
 }

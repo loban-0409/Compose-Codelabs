@@ -48,41 +48,43 @@ import com.example.cupcake.ui.theme.CupcakeTheme
 @Composable
 fun OrderSummaryScreen(
     orderUiState: OrderUiState,
-    modifier: Modifier = Modifier
+    onCancelButtonClicked: () -> Unit,
+    onSendButtonClicked: (String, String) -> Unit,
+    modifier: Modifier = Modifier,
 ) {
     val resources = LocalContext.current.resources
 
     val numberOfCupcakes = resources.getQuantityString(
         R.plurals.cupcakes,
         orderUiState.quantity,
-        orderUiState.quantity
+        orderUiState.quantity,
     )
-    //Load and format a string resource with the parameters.
+    // Load and format a string resource with the parameters.
     val orderSummary = stringResource(
         R.string.order_details,
         numberOfCupcakes,
         orderUiState.flavor,
         orderUiState.date,
-        orderUiState.quantity
+        orderUiState.quantity,
     )
     val newOrder = stringResource(R.string.new_cupcake_order)
-    //Create a list of order summary to display
+    // Create a list of order summary to display
     val items = listOf(
         // Summary line 1: display selected quantity
         Pair(stringResource(R.string.quantity), numberOfCupcakes),
         // Summary line 2: display selected flavor
         Pair(stringResource(R.string.flavor), orderUiState.flavor),
         // Summary line 3: display selected pickup date
-        Pair(stringResource(R.string.pickup_date), orderUiState.date)
+        Pair(stringResource(R.string.pickup_date), orderUiState.date),
     )
 
     Column(
         modifier = modifier,
-        verticalArrangement = Arrangement.SpaceBetween
+        verticalArrangement = Arrangement.SpaceBetween,
     ) {
         Column(
             modifier = Modifier.padding(dimensionResource(R.dimen.padding_medium)),
-            verticalArrangement = Arrangement.spacedBy(dimensionResource(R.dimen.padding_small))
+            verticalArrangement = Arrangement.spacedBy(dimensionResource(R.dimen.padding_small)),
         ) {
             items.forEach { item ->
                 Text(item.first.uppercase())
@@ -92,24 +94,24 @@ fun OrderSummaryScreen(
             Spacer(modifier = Modifier.height(dimensionResource(R.dimen.padding_small)))
             FormattedPriceLabel(
                 subtotal = orderUiState.price,
-                modifier = Modifier.align(Alignment.End)
+                modifier = Modifier.align(Alignment.End),
             )
         }
         Row(
-            modifier = Modifier.padding(dimensionResource(R.dimen.padding_medium))
+            modifier = Modifier.padding(dimensionResource(R.dimen.padding_medium)),
         ) {
             Column(
-                verticalArrangement = Arrangement.spacedBy(dimensionResource(R.dimen.padding_small))
+                verticalArrangement = Arrangement.spacedBy(dimensionResource(R.dimen.padding_small)),
             ) {
                 Button(
                     modifier = Modifier.fillMaxWidth(),
-                    onClick = {}
+                    onClick = { onSendButtonClicked(newOrder, orderSummary) },
                 ) {
                     Text(stringResource(R.string.send))
                 }
                 OutlinedButton(
                     modifier = Modifier.fillMaxWidth(),
-                    onClick = {}
+                    onClick = onCancelButtonClicked,
                 ) {
                     Text(stringResource(R.string.cancel))
                 }
@@ -124,7 +126,9 @@ fun OrderSummaryPreview() {
     CupcakeTheme {
         OrderSummaryScreen(
             orderUiState = OrderUiState(0, "Test", "Test", "$300.00"),
-            modifier = Modifier.fillMaxHeight()
+            onCancelButtonClicked = {},
+            onSendButtonClicked = { subject: String, summary: String -> },
+            modifier = Modifier.fillMaxHeight(),
         )
     }
 }

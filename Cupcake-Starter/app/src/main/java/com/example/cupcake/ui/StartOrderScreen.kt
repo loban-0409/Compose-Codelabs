@@ -49,27 +49,28 @@ import com.example.cupcake.ui.theme.CupcakeTheme
 @Composable
 fun StartOrderScreen(
     quantityOptions: List<Pair<Int, Int>>,
-    modifier: Modifier = Modifier
+    onNextButtonClicked: (Int) -> Unit,
+    modifier: Modifier = Modifier,
 ) {
     Column(
         modifier = modifier,
-        verticalArrangement = Arrangement.SpaceBetween
+        verticalArrangement = Arrangement.SpaceBetween,
     ) {
         Column(
             modifier = Modifier.fillMaxWidth(),
             horizontalAlignment = Alignment.CenterHorizontally,
-            verticalArrangement = Arrangement.spacedBy(dimensionResource(R.dimen.padding_small))
+            verticalArrangement = Arrangement.spacedBy(dimensionResource(R.dimen.padding_small)),
         ) {
             Spacer(modifier = Modifier.height(dimensionResource(R.dimen.padding_medium)))
             Image(
                 painter = painterResource(R.drawable.cupcake),
                 contentDescription = null,
-                modifier = Modifier.width(300.dp)
+                modifier = Modifier.width(300.dp),
             )
             Spacer(modifier = Modifier.height(dimensionResource(R.dimen.padding_medium)))
             Text(
                 text = stringResource(R.string.order_cupcakes),
-                style = MaterialTheme.typography.headlineSmall
+                style = MaterialTheme.typography.headlineSmall,
             )
             Spacer(modifier = Modifier.height(dimensionResource(R.dimen.padding_small)))
         }
@@ -77,13 +78,13 @@ fun StartOrderScreen(
             modifier = Modifier.fillMaxWidth(),
             horizontalAlignment = Alignment.CenterHorizontally,
             verticalArrangement = Arrangement.spacedBy(
-                dimensionResource(id = R.dimen.padding_medium)
-            )
+                dimensionResource(id = R.dimen.padding_medium),
+            ),
         ) {
             quantityOptions.forEach { item ->
                 SelectQuantityButton(
                     labelResourceId = item.first,
-                    onClick = {}
+                    onClick = { onNextButtonClicked(item.second) },
                 )
             }
         }
@@ -98,11 +99,11 @@ fun StartOrderScreen(
 fun SelectQuantityButton(
     @StringRes labelResourceId: Int,
     onClick: () -> Unit,
-    modifier: Modifier = Modifier
+    modifier: Modifier = Modifier,
 ) {
     Button(
         onClick = onClick,
-        modifier = modifier.widthIn(min = 250.dp)
+        modifier = modifier.widthIn(min = 250.dp),
     ) {
         Text(stringResource(labelResourceId))
     }
@@ -114,9 +115,10 @@ fun StartOrderPreview() {
     CupcakeTheme {
         StartOrderScreen(
             quantityOptions = DataSource.quantityOptions,
+            onNextButtonClicked = {},
             modifier = Modifier
                 .fillMaxSize()
-                .padding(dimensionResource(R.dimen.padding_medium))
+                .padding(dimensionResource(R.dimen.padding_medium)),
         )
     }
 }
